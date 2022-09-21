@@ -1,30 +1,51 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+
+  <NavB :logo="logo_src" :alt="app_name" />
   <router-view/>
+  <Footer />
+
 </template>
 
+<script>
+// parando em 3:10min do video #22 e alterado css
+import NavB from './components/NavB.vue';
+import Footer from './components/Footer.vue';
+
+export default{
+    components: {
+    NavB,
+    Footer
+},
+data(){
+  return {
+    logo_src: "/img/LogoCar.png",
+    app_name: "Make Your Burger"
+  }
+}
+}
+</script>
+
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+ *{
+
+    font-family: Helvetica, sans-serif;
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+  }
+
+.main-container {
+  margin:50px;
+  min-height:250px;
+
+}
+h1 {
+  font-size: 24px;
   text-align: center;
-  color: #2c3e50;
+  margin-bottom: 30px;
+  
 }
 
-nav {
-  padding: 30px;
-}
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
