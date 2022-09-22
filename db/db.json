@@ -1,65 +1,85 @@
 {
-    "ingredientes": {
-      "paes": [
+    "ListItens": {
+      "fornecedor": [
         {
           "id": 1,
-          "tipo": "Italiano Branco"
+          "tipo": "Supermecado Cometa"
         },
         {
           "id": 2,
-          "tipo": "3 Queijos"
+          "tipo": "Supermcado Pão Açucar"
         },
         {
           "id": 3,
-          "tipo": "Parmesão e Orégano"
+          "tipo": "Supermcado OPovo"
         },
         {
           "id": 4,
-          "tipo": "Integral"
+          "tipo": "Atacadão Max"
         }
       ],
-      "carnes": [
+      "categoria": [
         {
           "id": 1,
-          "tipo": "Maminha"
+          "tipo": "Produto Limpeza"
         },
         {
           "id": 2,
-          "tipo": "Alcatra"
+          "tipo": "Material Escritório"
         },
         {
           "id": 3,
-          "tipo": "Picanha"
-        },
-        {
-          "id": 4,
-          "tipo": "Veggie burger"
+          "tipo": "Alimentos"
         }
       ],
-      "opcionais": [
+      "Produto": [
         {
           "id": 1,
-          "tipo": "Bacon"
+          "tipo": "Saco de Lixo"
         },
         {
           "id": 2,
-          "tipo": "Cheddar"
+          "tipo": "Água Sanitária"
         },
         {
           "id": 3,
-          "tipo": "Salame"
+          "tipo": "Detergente"
         },
         {
           "id": 4,
-          "tipo": "Tomate"
+          "tipo": "Desifetante"
+        },
+        {
+          "id": 5,
+          "tipo": "Folha de papel A4"
+        },
+        {
+          "id": 6,
+          "tipo": "Folha de papel A3"
+        },
+        {
+          "id": 7,
+          "tipo": "Grampeador"
+        },
+        {
+          "id": 8,
+          "tipo": "Caneta Azul"
+        },
+        {
+          "id": 9,
+          "tipo": "Caneta Preta"
+        },
+        {
+          "id": 10,
+          "tipo": "Café"
+        },
+        {
+          "id": 11,
+          "tipo": "Açucar"
         },
         {
           "id": 4,
-          "tipo": "Cebola roxa"
-        },
-        {
-          "id": 4,
-          "tipo": "Pepino"
+          "tipo": "Sal"
         }
       ]
     },
