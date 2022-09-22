@@ -82,9 +82,15 @@
                 DataPedido: null, // dados enviados pela pagina inicial
                 status: "Solicitado",
                 msg: null,
-                
 
-
+            }
+        },
+        methods: {
+            async getItensform(){
+            let req = await fetch('http://localhost:3000/ListItens');    // requisição
+            let data = await req.json();
+            console.log(data);
+            
             }
         }
     }
