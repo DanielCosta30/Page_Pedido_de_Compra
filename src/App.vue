@@ -7,7 +7,7 @@
 </template>
 
 <script>
-// parando em 3:10min do video #22 e alterado css
+
 import NavB from './components/NavB.vue';
 import Footer from './components/Footer.vue';
 
@@ -37,7 +37,7 @@ data(){
 
 .main-container {
   margin:50px;
-  min-height:250px;
+  min-height:350px;
 
 }
 h1 {

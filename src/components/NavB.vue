@@ -7,7 +7,6 @@
 
       <router-link to="/">Home</router-link>
       <router-link to="/pedidos">Pedidos</router-link>
-
     </div>
 
 
@@ -25,9 +24,9 @@ export default {
 <style scoped>
 
 #nav{
-  background-color: #C1DEDC; 
-  box-shadow: 0px 0px 10px 0px;
-  padding: 15px 50px;
+  background-color: #c1dedc; 
+  box-shadow: 0px 0px 50px 0px;
+  padding: 10px 50px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -45,6 +44,7 @@ export default {
 
 #nav a {
 
+  font-size: 20px;
   color: rgb(68, 68, 64);
   text-decoration: none;
   margin :12px;
