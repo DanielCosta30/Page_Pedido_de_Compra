@@ -69,7 +69,24 @@
 <script>
 
     export default {
-        name:"PedidoForm"
+        name:"PedidoForm",
+        data() {
+            return {
+                fornecedor: null, // dados que vem do servidor
+                categoria: null, // dados que vem do servidor
+                produto: null, // dados que vem do servidor
+                unidade:null, // dados que vem do servidor
+                usuario: null, // dados enviados pela pagina inicial
+                quantidade:null, // dados enviados pela pagina inicial
+                ValorUnt: null, // dados enviados pela pagina inicial
+                DataPedido: null, // dados enviados pela pagina inicial
+                status: "Solicitado",
+                msg: null,
+                
+
+
+            }
+        }
     }
 
 </script>
@@ -112,5 +129,20 @@ input, select {
     width: 300px;   
 }
 
+.submit-btn{
+    background-color: #222;
+    color:#FCBA03;
+    font-weight: bold;
+    border: 2px solid #222;
+    padding: 10px;
+    font-size: 16px;
+   
+    cursor:pointer;
+    transition: .5s;
+}
 
+.submit-btn:hover{
+    background: transparent;
+    color:#222;
+}
 </style>
