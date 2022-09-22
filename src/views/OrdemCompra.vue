@@ -1,5 +1,5 @@
 <template>
-  
+    
     <h1>Ordem de Compra</h1>
     <PedidoForm />
 
