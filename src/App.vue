@@ -19,7 +19,7 @@ export default{
 data(){
   return {
     logo_src: "/img/LogoCar.png",
-    app_name: "Make Your Burger"
+    app_name: "Purchase System"
   }
 }
 }
