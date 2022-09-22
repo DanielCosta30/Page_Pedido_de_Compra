@@ -1,7 +1,7 @@
 <template>
     
 <div id="main-banner">
-    <h1>SAFE VALUE</h1>
+    <h1>Purchase System</h1>
 
 </div>
 
