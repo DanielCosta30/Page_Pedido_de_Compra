@@ -1,17 +1,18 @@
 <template>
 
-    <div>
+    <div class="ordemcompra-container">
+
         <p>Componente de Mensagem</p>
         <form id="ordemcompra-form">
 
             <div class="input-container">
                 <label for="usuario">Nome do Usuario:</label>
-                <input type="text" id="usuario" name="name" v-model="usuario" placeholder="Digite o nome do usuario">
+                <input type="text" id="usuario" name="usuario" v-model="usuario" placeholder="Digite o nome do usuario">
             </div>
 
             <div class="input-container">
                 <label for="fornecedor">Nome do Fornecedor:</label>
-                <select name="forn" id="forn" v-model="fornecedor">
+                <select name="fornecedor" id="forn" v-model="fornecedor">
                     <option value="">Selecione o Fornecedor</option>
                     <option value="Cometa">Supermecado Cometa</option>                 
                 </select>
@@ -19,7 +20,7 @@
 
             <div class="input-container">
                 <label for="categoria">Escolha uma Categoria :</label>
-                <select name="cat" id="cat" v-model="categoria">
+                <select name="categoria" id="cat" v-model="categoria">
                     <option value="">Selecione a categoria</option>
                     <option value="Limpeza">Limpeza</option>                 
                 </select>
@@ -27,7 +28,7 @@
 
             <div class="input-container">
                 <label for="produto">Selecione o Produto:</label>
-                <select name="prod" id="prod" v-model="produto">
+                <select name="produto" id="prod" v-model="produto">
                     <option value="">Selecione a Produto</option>
                     <option value="produto">Carne Fraldinha</option>                 
                 </select>
@@ -35,7 +36,7 @@
 
             <div class="input-container">
                 <label for="unidade">Selecione a unidade:</label>
-                <select name="und" id="und" v-model="unidade">
+                <select name="undidade" id="und" v-model="unidade">
                     <option value="">Selecione a unidade</option>
                     <option value="Kg">Kg</option>                 
                 </select>
@@ -48,7 +49,7 @@
 
             <div class="input-container">
                 <label for="valor">Valor Unitário:</label>
-                <input type="number" id="valor" name="name" v-model="valor" placeholder="Digite o valor unitário  R$">
+                <input type="number" id="valor" name="valor" v-model="valor" placeholder="Digite o valor unitário  R$">
             </div>
 
             <div class="input-container">
@@ -72,3 +73,44 @@
     }
 
 </script>
+
+<style scoped>
+
+#ordemcompra-container {
+
+    background: gray;
+    filter: opacity(60%);
+    background-position: 0 -350px;
+    background-size: cover;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+ }   
+
+#ordemcompra-form{
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.input-container{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+label{
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: rgba(2, 2, 2, 0.925);
+    padding: 5px 5px;
+    border-left: 4px solid #FCBA03;
+}
+
+input, select {
+    padding:5px 5px;
+    width: 300px;   
+}
+
+
+</style>
