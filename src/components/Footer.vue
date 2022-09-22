@@ -16,7 +16,7 @@ export default {
 <style scoped>
 
 #footer{
-    height: 200px;
+    height: 100px;
     background-color: #222;
     color:rgb(68, 68, 64);
     display: flex;
