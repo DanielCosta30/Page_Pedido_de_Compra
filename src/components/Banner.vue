@@ -1,7 +1,7 @@
 <template>
     
 <div id="main-banner">
-    <h1>ACESS</h1>
+    <h1>SAFE VALUE</h1>
 
 </div>
 
@@ -28,5 +28,12 @@
     justify-content: flex-start;
  }
 
+#main-banner h1{
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 30px;
+  background-color: #2222;
+  padding: 20px 40px;
+}
 </style>
 
