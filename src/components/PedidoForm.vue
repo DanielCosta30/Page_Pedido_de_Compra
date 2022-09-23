@@ -2,7 +2,7 @@
 
     <div class="ordemcompra-container">
 
-        <p>Componente de Mensagem</p>
+        <Message />
         <form id="ordemcompra-form" @submit="createPedido">
 
             <div class="input-container" >
@@ -70,83 +70,69 @@
 </template>
 
 <script>
+import Message from './Message.vue';
 
     export default {
-        name:"PedidoForm",
-        data() {
-            return {
-                fornecedores: null, // dados que vem do servidor
-                categorias: null, // dados que vem do servidor
-                produtos: null, // dados que vem do servidor
-                unidade:null, // dados enviados pela pagina inicial
-                usuario: null, // dados enviados pela pagina inicial
-                quantidade:null, // dados enviados pela pagina inicial
-                ValorUnt: null, // dados enviados pela pagina inicial
-                DataPedido: null, // dados enviados pela pagina inicial
-                status: "Solicitado",
-                msg: null,
-
-            }
+    name: "PedidoForm",
+    data() {
+        return {
+            fornecedores: null,
+            categorias: null,
+            produtos: null,
+            unidade: null,
+            usuario: null,
+            quantidade: null,
+            ValorUnt: null,
+            DataPedido: null,
+            status: "Solicitado",
+            msg: null,
+        };
+    },
+    methods: {
+        async getListItens() {
+            const req = await fetch("http://localhost:3000/ListItens");
+            const data = await req.json();
+            this.fornecedores = data.fornecedores;
+            this.categorias = data.categorias;
+            this.produtos = data.produtos;
         },
-        methods: {
-            async getListItens (){
-                const req = await fetch("http://localhost:3000/ListItens");
-                const data = await req.json();
-
-                this.fornecedores = data.fornecedores;
-                this.categorias = data.categorias;
-                this.produtos = data.produtos;
-                
-            },
-            async createPedido(e){   // criando a ordem de compra
-                
-                e.preventDefault();
-                
-                let data = {
-                    usuario: this.usuario,
-                    fornecedor: this.fornecedor,
-                    categoria: this.categoria,
-                    produto: this.produto,
-                    unidade: this.unidade,
-                    quantidade: this.quantidade,
-                    valor: this.valor,
-                    data: this.data,
-                    staus: "Solicitado"
-                }
-
-                let dataJson =JSON.stringify(data)  // transformando dado em texto
-                
-                let req = await fetch("http://localhost:3000/OrdemCompra" , {  //gerando a requisição
-                method: "POST",                                                //inserindo parametro
-                headers: {"Content-type": "application/json"},                  //enviando pedido para o db.json
-                body: dataJson                                           
-                }); 
-
-                let res = await req.json();    
-
-                //colocar msg de sistema
-
-                
-                //limpar dados para enviar proximo pedido     
-                 this.fornecedor="";                         
-                 this.categoria="";
-                 this.produto="";
-                 this.unidade="";
-                 this.quantidade="";
-                 this.valor="";
-                 this.data="";
-                 
-                    
-
-
-                console.log(res);
-               
-            }
-        },
-        mounted() {
-            this.getListItens()           
+        async createPedido(e) {
+            e.preventDefault();
+            let data = {
+                usuario: this.usuario,
+                fornecedor: this.fornecedor,
+                categoria: this.categoria,
+                produto: this.produto,
+                unidade: this.unidade,
+                quantidade: this.quantidade,
+                valor: this.valor,
+                data: this.data,
+                staus: "Solicitado"
+            };
+            let dataJson = JSON.stringify(data); // transformando dado em texto
+            let req = await fetch("http://localhost:3000/OrdemCompra", {
+                method: "POST",
+                headers: { "Content-type": "application/json" },
+                body: dataJson
+            });
+            let res = await req.json();
+            //colocar msg de sistema
+            //limpar dados para enviar proximo pedido     
+            this.fornecedor = "";
+            this.categoria = "";
+            this.produto = "";
+            this.unidade = "";
+            this.quantidade = "";
+            this.valor = "";
+            this.data = "";
+            console.log(res);
         }
-    }
+    },
+    mounted() {
+        this.getListItens();
+    },
+    components: { Message }
+}
 
 </script>
 
