@@ -98,7 +98,7 @@
                 this.produtos = data.produtos;
                 
             },
-            async createPedido(e){
+            async createPedido(e){   // criando a ordem de compra
                 
                 e.preventDefault();
                 
@@ -114,7 +114,33 @@
                     staus: "Solicitado"
                 }
 
-                console.log(data);
+                let dataJson =JSON.stringify(data)  // transformando dado em texto
+                
+                let req = await fetch("http://localhost:3000/OrdemCompra" , {  //gerando a requisição
+                method: "POST",                                                //inserindo parametro
+                headers: {"Content-type": "application/json"},                  //enviando pedido para o db.json
+                body: dataJson                                           
+                }); 
+
+                let res = await req.json();    
+
+                //colocar msg de sistema
+
+                
+                //limpar dados para enviar proximo pedido     
+                 this.fornecedor="";                         
+                 this.categoria="";
+                 this.produto="";
+                 this.unidade="";
+                 this.quantidade="";
+                 this.valor="";
+                 this.data="";
+                 
+                    
+
+
+                console.log(res);
+               
             }
         },
         mounted() {
