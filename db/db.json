@@ -1,70 +1,172 @@
 {
-    "ListItens": {
-      "fornecedores": [
-        {
-          "id": 1,
-          "tipo": "Supermecado Cometa"
-        },
-        {
-          "id": 2,
-          "tipo": "Supermcado Pão Açucar"
-        },
-        {
-          "id": 3,
-          "tipo": "Supermcado OPovo"
-        },
-        {
-          "id": 4,
-          "tipo": "Atacadão Max"
-        }
-      ],
-      "categorias": [
-        {
-          "id": 1,
-          "tipo": "Produto Limpeza"
-        },
-        {
-          "id": 2,
-          "tipo": "Material Escritório"
-        },
-        {
-          "id": 3,
-          "tipo": "Alimentos"
-        }
-      ],    
-      "produtos": [
-        {
-          "id": 1,
-          "tipo": "Saco de Lixo"
-        },
-        {
-          "id": 2,
-          "tipo": "Água Sanitária"
-        },
-        {
-          "id": 3,
-          "tipo": "Detergente"
-        },
-        {
-          "id": 4,
-          "tipo": "Desifetante"
-        }
-      ]
-    },
-    "status": [
+  "ListItens": {
+    "fornecedores": [
       {
         "id": 1,
-        "tipo": "Solicitado"
+        "tipo": "Supermecado Cometa"
       },
       {
         "id": 2,
-        "tipo": "Em produção"
+        "tipo": "Supermcado Pão Açucar"
       },
       {
         "id": 3,
-        "tipo": "Finalizado"
+        "tipo": "Supermcado OPovo"
+      },
+      {
+        "id": 4,
+        "tipo": "Atacadão Max"
       }
     ],
-    "OrdemCompra": []
-
-  }
+    "categorias": [
+      {
+        "id": 1,
+        "tipo": "Produto Limpeza"
+      },
+      {
+        "id": 2,
+        "tipo": "Material Escritório"
+      },
+      {
+        "id": 3,
+        "tipo": "Alimentos"
+      }
+    ],
+    "produtos": [
+      {
+        "id": 1,
+        "tipo": "Saco de Lixo"
+      },
+      {
+        "id": 2,
+        "tipo": "Água Sanitária"
+      },
+      {
+        "id": 3,
+        "tipo": "Detergente"
+      },
+      {
+        "id": 4,
+        "tipo": "Desifetante"
+      }
+    ]
+  },
+  "status": [
+    {
+      "id": 1,
+      "tipo": "Solicitado"
+    },
+    {
+      "id": 2,
+      "tipo": "Em produção"
+    },
+    {
+      "id": 3,
+      "tipo": "Finalizado"
+    }
+  ],
+  "OrdemCompras": [
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "usuario": "Pedro Costa",
+      "fornecedor": "Atacadão Max",
+      "categoria": "Produto Limpeza",
+      "produto": "Desifetante",
+      "unidade": "Unid",
+      "quantidade": 4,
+      "valor": 33,
+      "data": "23/09/2022",
+      "staus": "Solicitado",
+      "id": 3
+    },
+    {
+      "usuario": "Paula Nascimento",
+      "fornecedor": "Atacadão Max",
+      "categoria": "Produto Limpeza",
+      "produto": "Água Sanitária",
+      "unidade": "Unid",
+      "quantidade": 4,
+      "valor": 33,
+      "data": "23/09/2022",
+      "staus": "Solicitado",
+      "id": 4
+    },
+    {
+      "usuario": "Carol Mendes",
+      "fornecedor": "Supermecado Cometa",
+      "categoria": "Produto Limpeza",
+      "produto": "Água Sanitária",
+      "unidade": "Unid",
+      "quantidade": 55,
+      "valor": 19,
+      "data": "23/09/2022",
+      "staus": "Solicitado",
+      "id": 5
+    },
+    {
+      "usuario": "Paula Nascimento",
+      "fornecedor": "Supermecado Cometa",
+      "categoria": "Produto Limpeza",
+      "produto": "Saco de Lixo",
+      "unidade": "Unid",
+      "quantidade": 3,
+      "valor": 19,
+      "data": "23/09/2022",
+      "staus": "Solicitado",
+      "id": 6
+    },
+    {
+      "usuario": "Pedro Costa",
+      "fornecedor": "Supermecado Cometa",
+      "categoria": "Material Escritório",
+      "produto": "Saco de Lixo",
+      "unidade": "Unid",
+      "quantidade": 33,
+      "valor": 33,
+      "data": "23/09/2022",
+      "staus": "Solicitado",
+      "id": 7
+    },
+    {
+      "usuario": "Gabriel Costa",
+      "fornecedor": "Supermcado OPovo",
+      "categoria": "Produto Limpeza",
+      "produto": "Saco de Lixo",
+      "unidade": "Unid",
+      "quantidade": 8,
+      "valor": 9,
+      "data": "23/09/2022",
+      "staus": "Solicitado",
+      "id": 8
+    },
+    {
+      "usuario": "Carlos",
+      "fornecedor": "Supermcado Pão Açucar",
+      "categoria": "Produto Limpeza",
+      "produto": "Saco de Lixo",
+      "unidade": "Unid",
+      "quantidade": 3,
+      "valor": 33,
+      "data": "23/09/2022",
+      "staus": "Solicitado",
+      "id": 9
+    },
+    {
+      "usuario": "Pedro Costa",
+      "fornecedor": "Supermecado Cometa",
+      "categoria": "Produto Limpeza",
+      "produto": "Saco de Lixo",
+      "unidade": "Unid",
+      "quantidade": 1,
+      "valor": 1,
+      "data": "1",
+      "staus": "Solicitado",
+      "id": 10
+    }
+  ]
+}
