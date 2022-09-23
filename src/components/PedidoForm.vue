@@ -14,7 +14,7 @@
                 <label for="fornecedor">Nome do Fornecedor:</label>
                 <select name="fornecedor" id="fornecedor" v-model="fornecedor">
                     <option value="">Selecione o Fornecedor</option>
-                    <option v-for="fornecedor in fornecedor" :key="fornecedor.id" 
+                    <option v-for="fornecedor in fornecedores" :key="fornecedor.id" 
                     :value="fornecedor.tipo">
                     {{ fornecedor.tipo }}</option>                 
                 </select>
@@ -22,9 +22,9 @@
 
             <div class="input-container">
                 <label for="categoria">Escolha uma Categoria :</label>
-                <select name="categoria" id="cat" v-model="categoria">
+                <select name="categoria" id="categoria" v-model="categoria">
                     <option value="">Selecione a categoria</option>
-                    <option v-for="categoria in categoria" :key="categoria.id" 
+                    <option v-for="categoria in categorias" :key="categoria.id" 
                     :value="categoria.tipo">
                     {{ categoria.tipo }}</option>                 
                 </select>
@@ -32,9 +32,9 @@
 
             <div class="input-container">
                 <label for="produto">Selecione o Produto:</label>
-                <select name="produto" id="prod" v-model="produto">
+                <select name="produto" id="produto" v-model="produto">
                     <option value="">Selecione a Produto</option>
-                    <option v-for="produto in produto" :key="produto.id" 
+                    <option v-for="produto in produtos" :key="produto.id" 
                     :value="produto.tipo">
                     {{ produto.tipo }}</option>                     
                 </select>
@@ -75,9 +75,9 @@
         name:"PedidoForm",
         data() {
             return {
-                fornecedor: null, // dados que vem do servidor
-                categoria: null, // dados que vem do servidor
-                produto: null, // dados que vem do servidor
+                fornecedores: null, // dados que vem do servidor
+                categorias: null, // dados que vem do servidor
+                produtos: null, // dados que vem do servidor
                 unidade:null, // dados enviados pela pagina inicial
                 usuario: null, // dados enviados pela pagina inicial
                 quantidade:null, // dados enviados pela pagina inicial
@@ -93,16 +93,28 @@
                 const req = await fetch("http://localhost:3000/ListItens");
                 const data = await req.json();
 
-                this.fornecedor = data.fornecedor;
-                this.categoria = data.categoria;
-                this.produto = data.produto;
+                this.fornecedores = data.fornecedores;
+                this.categorias = data.categorias;
+                this.produtos = data.produtos;
                 
             },
             async createPedido(e){
                 
                 e.preventDefault();
                 
-                console.log("Ordem de Compra Gerada");
+                let data = {
+                    usuario: this.usuario,
+                    fornecedor: this.fornecedor,
+                    categoria: this.categoria,
+                    produto: this.produto,
+                    unidade: this.unidade,
+                    quantidade: this.quantidade,
+                    valor: this.valor,
+                    data: this.data,
+                    staus: "Solicitado"
+                }
+
+                console.log(data);
             }
         },
         mounted() {
