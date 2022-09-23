@@ -12,9 +12,11 @@
 
             <div class="input-container">
                 <label for="fornecedor">Nome do Fornecedor:</label>
-                <select name="fornecedor" id="forn" v-model="fornecedor">
+                <select name="fornecedor" id="fornecedor" v-model="fornecedor">
                     <option value="">Selecione o Fornecedor</option>
-                    <option value="Cometa">Supermecado Cometa</option>                 
+                    <option v-for="fornecedor in fornecedor" :key="fornecedor.id" 
+                    :value="fornecedor.tipo">
+                    {{ fornecedor.tipo }}</option>                 
                 </select>
             </div>
 
@@ -22,7 +24,9 @@
                 <label for="categoria">Escolha uma Categoria :</label>
                 <select name="categoria" id="cat" v-model="categoria">
                     <option value="">Selecione a categoria</option>
-                    <option value="Limpeza">Limpeza</option>                 
+                    <option v-for="categoria in categoria" :key="categoria.id" 
+                    :value="categoria.tipo">
+                    {{ categoria.tipo }}</option>                 
                 </select>
             </div>
 
@@ -30,7 +34,9 @@
                 <label for="produto">Selecione o Produto:</label>
                 <select name="produto" id="prod" v-model="produto">
                     <option value="">Selecione a Produto</option>
-                    <option value="produto">Carne Fraldinha</option>                 
+                    <option v-for="produto in produto" :key="produto.id" 
+                    :value="produto.tipo">
+                    {{ produto.tipo }}</option>                 
                 </select>
             </div>
 
@@ -38,7 +44,9 @@
                 <label for="unidade">Selecione a unidade:</label>
                 <select name="undidade" id="und" v-model="unidade">
                     <option value="">Selecione a unidade</option>
-                    <option value="Kg">Kg</option>                 
+                    <option v-for="unidade in unidade" :key="unidade.id" 
+                    :value="unidade.tipo">
+                    {{ unidade.tipo }}</option>                  
                 </select>
             </div>
 
@@ -86,12 +94,21 @@
             }
         },
         methods: {
-            async getItensform(){
-            let req = await fetch('http://localhost:3000/ListItens');    // requisição
-            let data = await req.json();
-            console.log(data);
-            
+            async getListItens (){
+
+                const req = await fetch("http://localhost:3000/ListItens");
+                const data = await req.json();
+
+                this.fornecedor = data.fornecedor;
+                this.categoria = data.categoria;
+                this.produto = data.produto;
+                this.unidade = data.unidade;
+
             }
+        },
+        mounted() {
+            this.getListItens()
+            
         }
     }
 
