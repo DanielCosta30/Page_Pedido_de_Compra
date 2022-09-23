@@ -1,6 +1,6 @@
 <template>
     
-    <Message />
+    <Message :msg="msg"  v-show="msg" />
 
     <div class="ordemcompra-container">
         <form id="ordemcompra-form" @submit="createPedido">
@@ -117,7 +117,12 @@ import Message from "@/components/Message.vue";
                 body: dataJson
             });
             let res = await req.json();
+
             //colocar msg de sistema
+
+            this.msg = 'Ordem de compra realizada' + " Nº ${id}`"; 
+            setTimeout(() => this.msg = "", 3000)
+
             //limpar dados para enviar proximo pedido     
             this.fornecedor = "";
             this.categoria = "";
