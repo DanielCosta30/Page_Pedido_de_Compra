@@ -3,9 +3,9 @@
     <div class="ordemcompra-container">
 
         <p>Componente de Mensagem</p>
-        <form id="ordemcompra-form">
+        <form id="ordemcompra-form" @submit="createPedido">
 
-            <div class="input-container">
+            <div class="input-container" >
                 <label for="usuario">Nome do Usuario:</label>
                 <input type="text" id="usuario" name="usuario" v-model="usuario" placeholder="Digite o nome do usuario">
             </div>
@@ -36,18 +36,13 @@
                     <option value="">Selecione a Produto</option>
                     <option v-for="produto in produto" :key="produto.id" 
                     :value="produto.tipo">
-                    {{ produto.tipo }}</option>                 
+                    {{ produto.tipo }}</option>                     
                 </select>
             </div>
 
             <div class="input-container">
-                <label for="unidade">Selecione a unidade:</label>
-                <select name="undidade" id="und" v-model="unidade">
-                    <option value="">Selecione a unidade</option>
-                    <option v-for="unidade in unidade" :key="unidade.id" 
-                    :value="unidade.tipo">
-                    {{ unidade.tipo }}</option>                  
-                </select>
+                <label for="unidade">Insira a Unidade:</label>
+                <input type="text" id="unidade" name="quantidade" v-model="unidade" placeholder="Insiera a unidade">
             </div>
 
             <div class="input-container">
@@ -83,7 +78,7 @@
                 fornecedor: null, // dados que vem do servidor
                 categoria: null, // dados que vem do servidor
                 produto: null, // dados que vem do servidor
-                unidade:null, // dados que vem do servidor
+                unidade:null, // dados enviados pela pagina inicial
                 usuario: null, // dados enviados pela pagina inicial
                 quantidade:null, // dados enviados pela pagina inicial
                 ValorUnt: null, // dados enviados pela pagina inicial
@@ -95,20 +90,23 @@
         },
         methods: {
             async getListItens (){
-
                 const req = await fetch("http://localhost:3000/ListItens");
                 const data = await req.json();
 
                 this.fornecedor = data.fornecedor;
                 this.categoria = data.categoria;
                 this.produto = data.produto;
-                this.unidade = data.unidade;
-
+                
+            },
+            async createPedido(e){
+                
+                e.preventDefault();
+                
+                console.log("Ordem de Compra Gerada");
             }
         },
         mounted() {
-            this.getListItens()
-            
+            this.getListItens()           
         }
     }
 
