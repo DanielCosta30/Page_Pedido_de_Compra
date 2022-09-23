@@ -1,8 +1,8 @@
 <template>
+    
+    <Message />
 
     <div class="ordemcompra-container">
-
-        <Message />
         <form id="ordemcompra-form" @submit="createPedido">
 
             <div class="input-container" >
@@ -70,7 +70,8 @@
 </template>
 
 <script>
-import Message from './Message.vue';
+
+import Message from "@/components/Message.vue";
 
     export default {
     name: "PedidoForm",
@@ -131,7 +132,9 @@ import Message from './Message.vue';
     mounted() {
         this.getListItens();
     },
-    components: { Message }
+    components: { 
+        Message
+    }
 }
 
 </script>
