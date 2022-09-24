@@ -11,7 +11,7 @@ O projeto tem como finalidade simular um sistema interno de uma empresa, onde se
 
 ## :wrench: Tecnologias utilizadas
 * Css;
-* FrameworkVue;
+* Framework Vue.js;
 
 
 ## Implementação futura
