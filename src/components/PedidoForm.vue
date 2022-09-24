@@ -91,7 +91,7 @@ import Message from "@/components/Message.vue";
     },
     methods: {
         async getListItens() {
-            const req = await fetch("http://https://page-pedido-de-compra-cqoo.vercel.app/");
+            const req = await fetch("http://localhost:3000/ListItens");
             const data = await req.json();
             this.fornecedores = data.fornecedores;
             this.categorias = data.categorias;
@@ -111,7 +111,7 @@ import Message from "@/components/Message.vue";
                 staus: "Solicitado"
             };
             let dataJson = JSON.stringify(data); // transformando dado em texto
-            let req = await fetch("http://https://page-pedido-de-compra-cqoo.vercel.app/", {
+            let req = await fetch("http://localhost:3000/OrdemCompra", {
                 method: "POST",
                 headers: { "Content-type": "application/json" },
                 body: dataJson
