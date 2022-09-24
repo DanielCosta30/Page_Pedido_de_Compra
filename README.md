@@ -1,4 +1,4 @@
-# Ordem de Compra<
+# Ordem de Compra
 <h1 align="center">:file_cabinet: Projeto Ordem de Compra</h1>
 
 ## :memo: Descrição
